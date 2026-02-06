@@ -1,45 +1,40 @@
 import React from 'react';
 import './Main.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const Main = () => {
+const Survey = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="main-page">
       <header className="main-header">
-        <h1>Participe da Pesquisa sobre Governança de Dados</h1>
+        <h1>{t('survey.title')}</h1>
         <p>
-          <strong>
-            Desde já, agradeço muito pela sua colaboração!
-          </strong>
+          <strong>{t('survey.thanks')}</strong>
         </p>
       </header>
 
       <section className="main-section center-button" id="overview">
-        <a class="botao" href="#" target="_blank">
-          Preencha o formulário clicando aqui (desativado)
+        <a className="botao" href="#" target="_blank">
+          {t('survey.fillForm')}
         </a>
-        <a class="botao" href="#" target="_blank">
-          Marque uma reunião comigo, se tiver dúvidas (desativado)
+        <a className="botao" href="#" target="_blank">
+          {t('survey.scheduleMeeting')}
         </a>
-        <a class="botao" href="#" target="_blank">
-          Ou fale comigo em (email)
+        <a className="botao" href="#" target="_blank">
+          {t('survey.contact')}
         </a>
       </section>
 
       <section className="main-section" id="overview">
-        <h2>Apresentação</h2>
+        <h2>{t('survey.presentation')}</h2>
 
-        <p>
-          O objetivo é validar uma proposta de <strong>Modelo de Maturidade da Governança de Dados (DG2M)</strong>.
-        </p>
+        <p>{t('survey.objective')}</p>
 
-        <p>
-          O survey é direcionado a profissionais que atuam com dados, governança, tecnologia da informação e áreas correlatas, 
-          e busca reunir percepções e feedbacks sobre o modelo proposto. Todas as respostas são sigilosas e utilizadas exclusivamente para fins acadêmicos.
-        </p>
+        <p>{t('survey.target')}</p>
       </section>
     </div>
-
   );
 };
 
-export default Main;
+export default Survey;
